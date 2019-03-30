@@ -1,0 +1,23 @@
+<ion-content style="background-color: black">
+  <ion-card>
+      <ion-card-header>
+          <ion-card-subtitle>Sign in to continue to</ion-card-subtitle>
+          <ion-card-title>BIL App</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+      <ion-item>
+        <ion-icon slot="start"name="mail" color="warning"></ion-icon><ion-input type="text" placeholder="Mobile or E-mail"[(ngModel)]="customer.mail"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start"name="lock" color="warning"></ion-icon><ion-input type="Password" placeholder="Password"[(ngModel)]="customer.password"></ion-input>
+        
+    </ion-item><br><br>
+
+    &nbsp;&nbsp;<a href="forget">Forgot Password?</a><br><br>
+    <ion-button expand="block" color="warning" (click)="login()">Sign In</ion-button><br><br>
+    &nbsp;&nbsp;<ion-text>Don't have an account?</ion-text><a href="register">Sign Up</a>
+  </ion-card-content>
+    </ion-card>
+</ion-content>
