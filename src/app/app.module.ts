@@ -18,6 +18,7 @@ import { MakePayComponent } from './make-pay/make-pay.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OfferComponent } from './offer/offer.component';
 import { AppRoutingModule } from './app-routing.module';
+// import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [AppComponent,LoginComponent,RegisterComponent,ForgetComponent,ListComponent,BookingComponent,
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [
     StatusBar,
     SplashScreen,
+    // Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

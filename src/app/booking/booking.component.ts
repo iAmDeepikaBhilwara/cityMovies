@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { MovieService} from '../movie.service';
+// import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-booking',
@@ -16,7 +17,7 @@ export class BookingComponent implements OnInit {
   movie:any;
   
   movies={
-    id:0,customer_id:0,tickets:0,movie_id:0,movie_name:"",movie_time:"",theatre:"",screen:0,city:"",movie_date:"",date:"",amount:0,ticket_price:0
+    customer_id:0,tickets:0,movie_id:0,movie_name:"",movie_time:"",theatre:"",screen:0,city:"",movie_date:"",date:"",amount:0,ticket_price:0
 }
 data={
   tickets:0
@@ -31,12 +32,12 @@ data={
       this.movie=movie});
     });
   }
-amount=this.data.tickets*200;
+  amount1=0;
   bookMovie(movie,t)
   {
-    console.log(movie);
+    this.amount1=this.data.tickets*200;
+    
     this.movies={
-      id:0,
       customer_id:2,
       tickets:t,
       movie_id:movie.id,
@@ -47,15 +48,34 @@ amount=this.data.tickets*200;
       city:"Bangalore",
       movie_date:"2018-02-13",
       date:"2019-03-30",
-      amount:this.amount,
+      amount:this.amount1,
       ticket_price:200
     }
+    console.log('booking====>',this.movies);
+    console.log('amount===>',this.amount1)
     
     this.movieService.addRemoteBooking(this.movies).
     subscribe(() => this.router.navigate(['/makePay']));
       
   
     }
+
+    // Takepic(){
+    //   const options: CameraOptions = {
+    //     quality: 100,
+    //     destinationType: this.camera.DestinationType.FILE_URI,
+    //     encodingType: this.camera.EncodingType.JPEG,
+    //     mediaType: this.camera.MediaType.PICTURE
+    //   }
+      
+    //   this.camera.getPicture(options).then((imageData) => {
+    //    // imageData is either a base64 encoded string or a file URI
+    //    // If it's base64 (DATA_URL):
+    //    let base64Image = 'data:image/jpeg;base64,' + imageData;
+    //   }, (err) => {
+    //    // Handle error
+    //   });
+    // }
      
       
   

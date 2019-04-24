@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 import { Observable} from 'rxjs';
 
 @Injectable({
@@ -14,6 +13,7 @@ export class MovieService {
   private movieUrl = 'http://localhost:3000/api/movies';
   private customerUrl='http://localhost:3000/api/customers';
   private bookingUrl='http://localhost:3000/api/booking';
+  private authUrl='http://localhost:3000/api/authenticate';
 
 
 
@@ -66,8 +66,9 @@ export class MovieService {
 }
 
  
-getCustomers(): Observable<[]>{
-  return this.http.get<[]>(this.customerUrl); 		
+getCustomers(customer): Observable<any>{
+  
+  return this.http.get<[]>(this.authUrl+"/"+customer.email+"/"+customer.password); 		
 }
  addRemoteCustomers(customer): Observable<any>{
   return this.http.post(this.customerUrl,customer);
@@ -80,7 +81,10 @@ addRemoteBooking(booking): Observable<any>{
   return this.http.post(this.bookingUrl, booking);
 }
 
-
+getRemoteCustomerPassword(phone): Observable<[]>
+{
+  return this.http.get<[]>(this.authUrl+'/'+phone);
+}
 
 
 }

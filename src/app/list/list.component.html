@@ -1,18 +1,57 @@
  <ion-content>
+    <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <ion-title style="color:yellow">List of Movies</ion-title>
+        </ion-toolbar>
+      
+        
+      </ion-header>
 <ul *ngFor="let m of list" >
-  <ion-grid>
-    <ion-row>
-      <ion-col>
+
+    <!-- <ion-grid>
+        <ion-row >
+          <ion-col col-md-4 *ngFor="let m of list">
+            <ion-card>
+                <img src="{{m.image_url}}" (click)="onSelect(m)" >
+                <br>
+                Movie name:<strong>&nbsp;{{m.name}}</strong><br><br>
+                Ratings:<strong>&nbsp;{{m.rating}}</strong><br><br>
+                Release Year:<strong>&nbsp;{{m.year}}</strong><br>
+            </ion-card>
+          </ion-col> -->
+           <!-- <ion-col col-md-4>
+            <ion-card><img src="{{m.image_url}}" (click)="onSelect(m)" >
+              <br>
+              Movie name:<strong>&nbsp;{{m.name}}</strong><br><br>
+              Ratings:<strong>&nbsp;{{m.rating}}</strong><br><br>
+              Release Year:<strong>&nbsp;{{m.year}}</strong><br></ion-card>
+          </ion-col>
+          <ion-col col-md-4>
+            <ion-card></ion-card>
+          </ion-col> 
+        </ion-row>
+      </ion-grid> -->
+  <!-- <ion-grid> -->
+    <!-- <ion-row>
+      <ion-col> -->
     <ion-card>
       <img src="{{m.image_url}}" (click)="onSelect(m)" >
       <br>
-      Movie name:<strong>&nbsp;{{m.name}}</strong><br><br>
-      Ratings:<strong>&nbsp;{{m.rating}}</strong><br><br>
-      Release Year:<strong>&nbsp;{{m.year}}</strong><br>
-
+      <div class="content">
+      <strong>&nbsp;{{m.name}}</strong><br><br>
+      <ion-icon ios="ios-star" md="md-star" color="warning"></ion-icon>
+      <ion-icon ios="ios-star" md="md-star"color="warning"></ion-icon>
+      <ion-icon ios="ios-star" md="md-star"color="warning"></ion-icon>
+      <ion-icon ios="ios-star-half" md="md-star-half"color="warning"></ion-icon>
+      <ion-icon ios="ios-star-outline" md="md-star-outline"color="warning"></ion-icon><br><br>
+      <strong>&nbsp;{{m.year}}</strong><br>
+      </div>
     </ion-card>
-    </ion-col>
+    <!-- </ion-col>
   </ion-row>
-  </ion-grid>
-</ul>
-</ion-content>
+  </ion-grid> --> 
+ </ul>
+</ion-content> 

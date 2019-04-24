@@ -17,5 +17,9 @@ export class PaymentComponent implements OnInit {
     this.router.navigate(['./list']);
   
   }
+  offer()
+  {
+    this.router.navigate(['/offer']);
+  }
 
 }

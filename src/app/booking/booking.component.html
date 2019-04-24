@@ -1,9 +1,18 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title style="color:yellow">Book the Movie here</ion-title>
+    </ion-toolbar>
+    </ion-header>
 <ion-content>
   <ion-card>
-    <ion-img src="{{movie.image_url}}"></ion-img><br><br>
+    <ion-img src={{movie.image_url}}></ion-img><br><br>
+   
     <ion-item>
       <ion-label>Number of Seats:</ion-label>
-      <ion-select placeholder="Select Seats" [(ngModel)]="movie.tickets">
+      <ion-select placeholder="Select Seats" [(ngModel)]="data.tickets">
         <ion-select-option value="1">1</ion-select-option>
         <ion-select-option value="2">2</ion-select-option>
         <ion-select-option value="3">3</ion-select-option>
@@ -15,7 +24,9 @@
 
     </ion-item><br><br>
 
-    
-    <ion-button color="warning" (click)="bookMovie(movie,movie.tickets)">Make Booking</ion-button>
+    <div class="signup-button">
+    <ion-button color="warning" (click)="bookMovie(movie,data.tickets)">Make Booking</ion-button>
+    </div>
+    <!-- <ion-button color="warning" (click)="Takepic()">Get captures</ion-button> -->
   </ion-card>
 </ion-content>
